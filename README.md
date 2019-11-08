@@ -60,7 +60,7 @@ I managed external chef cookbook dependencies using `berks`, which is provided b
 
 ## Terraform
 
-I named my teams like this: `team-<team_number`. A convenience script in `scripts/create_all.sh` helps with the creation of all workspaces.
+I named my teams like this: `team-<team_number>`. A convenience script in `scripts/create_all.sh` helps with the creation of all workspaces.
 
 Terraform round-robin creates the workspaces in one of five regions. This is because I hit gcp quota limits for public ips -- max 8 per region by default, and surprise, they didn't
 want to allow me to jump up to 40 ips for one region without me going through sales first. That's this part:
