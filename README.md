@@ -66,7 +66,6 @@ Terraform round-robin creates the workspaces in one of five regions. This is bec
 want to allow me to jump up to 40 ips for one region without me going through sales first. That's this part:
 
     locals {
-        vpn_config_dir = "vpn_configs"
         gcp_regions = ["us-central1","us-east1","us-east4","us-west1","us-west2"]
         
         team_number_split = split("-",terraform.workspace)
