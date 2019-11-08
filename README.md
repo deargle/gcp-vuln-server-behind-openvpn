@@ -1,4 +1,4 @@
-# Pentest lab on GCP using Terraform, Chef, Ansible, and Vagrant
+# Terraform workspace with a vulnerable server beind OpenVPN on Google Cloud Platform (GCP), using Terraform, Chef, Ansible, and Vagrant
 
 _Because why not use all the things?_
 
