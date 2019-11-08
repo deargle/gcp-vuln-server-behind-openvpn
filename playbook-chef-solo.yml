@@ -1,0 +1,28 @@
+---
+- hosts: all
+  remote_user: _provisioner
+  become: yes
+  become_method: sudo
+  vars:
+    runlist: "{{ lookup('file','chef_runlist') }}"
+  tasks:
+    - name: Create temp chef dir
+      file:
+        path: /tmp/chef
+        state: directory
+    - name: Template and copy dna.json
+      template:
+        src: templates/dna.json.j2
+        dest: /tmp/chef/dna.json
+    - name: Copy and Unzip cookbooks
+      unarchive:
+        src: chef-solo.tar.gz
+        dest: /tmp/chef/
+    - name: Run chef solo
+      shell: chef-solo -j /tmp/chef/dna.json --config-option cookbook_path="['/tmp/chef/cookbooks','/tmp/chef/berks-cookbooks']"
+      register: out
+    - name: delete chef dir
+      file:
+        path: /tmp/chef
+        state: absent
+    - debug: var=out.stdout_lines

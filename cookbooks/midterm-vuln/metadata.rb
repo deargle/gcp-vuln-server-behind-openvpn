@@ -1,0 +1,8 @@
+name 'midterm-vuln'
+maintainer 'deargle'
+maintainer_email 'dave@daveeargle.com'
+license 'BSD-3-clause'
+description 'Configures vuln midterm server'
+long_description 'Configures vuln midterm server'
+version '0.0.1'
+depends 'apt'

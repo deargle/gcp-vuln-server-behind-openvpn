@@ -1,0 +1,6 @@
+"recipe[apt::default]",
+"recipe[midterm-vuln::system_config]",
+"recipe[midterm-vuln::openvpn]",
+"recipe[midterm-vuln::sshd]",
+"recipe[midterm-vuln::users]",
+"recipe[midterm-vuln::clear_cache]"

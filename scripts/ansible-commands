@@ -1,0 +1,3 @@
+ansible -i vuln_ips all -m ping --private-key tyler-midterm-vuln -u _provisioner -f 10
+ansible-playbook -i vuln_ips --private-key=tyler-midterm-vuln run-chef-solo.yml -f 10
+ansible-playbook -i vuln_ips -l team-999 playbook-chef-solo.yml
